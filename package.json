@@ -1,0 +1,42 @@
+{
+  "name": "node_server_mongoose",
+  "version": "1.0.0",
+  "description": "Node project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --experimental-modules app.js",
+    "start-server": "node app.js",
+    "seed": "node seeder/seed.js"
+  },
+  "author": "manisha naik",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "connect-mongodb-session": "^2.4.1",
+    "cors": "^2.8.5",
+    "csurf": "^1.11.0",
+    "ejs": "^3.1.5",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "express-handlebars": "^5.1.0",
+    "express-session": "^1.17.1",
+    "express-validator": "^6.10.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.6.2",
+    "mongoose": "^5.10.9",
+    "mongoose-seed": "^0.6.0",
+    "multer": "^1.4.2",
+    "mysql2": "^2.2.5",
+    "nodemailer": "^6.4.17",
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "pdfkit": "^0.12.1",
+    "pug": "^3.0.0",
+    "sequelize": "^6.3.5",
+    "stripe": "^8.144.0",
+    "validatorjs": "^3.22.1"
+  }
+}
