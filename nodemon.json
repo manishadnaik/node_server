@@ -1,0 +1,11 @@
+{
+    "env": {
+        
+            "DB_USER" : "manisha-naik",
+            "DB_PASSWORD":"vB7Pt6D9QpnCxIZO",
+            "DB_NAME":"react-practical-test",
+            "DB_HOST":"127.0.0.1:27017",
+            "JWT_PRIVATE_KEY":"REACT_TEST_KEY"
+        
+    }
+}

@@ -18,17 +18,11 @@ module.exports.authenticate = (req, res, next) => {
   // find the user
   User.findOne({ email: req.body.email })
     .then((user) => {
-      // if founf store in session and change the login status
       if (user) {
         // console.log("user found was => ", user);
         bcryptjs.compare(password, user.password).then((doMatch) => {
           if (doMatch) {
-            req.session.isLoggedIn = true;
-            req.session.user = user;
-            // NOTE: can save the session forcebly before page is loaded so that the view is updated correctly
-            // req.session.save(error => {res.redirect('/');});
             user.password = "";
-            user["session"] = req.session;
             // create token
             let token = generateToken(user);
             return res.status(200).json({
@@ -56,8 +50,6 @@ module.exports.authenticate = (req, res, next) => {
       // next();
     })
     .catch((err) => {
-      console.log("oooooooooooo");
-      req.session.isLoggedIn = false;
       const error = new Error(err);
       error.httpStatusCode = 500;
       return next(error);
@@ -65,12 +57,7 @@ module.exports.authenticate = (req, res, next) => {
 };
 
 module.exports.logout = (req, res, next) => {
-  req.session.isLoggedIn = false;
-  req.session.user = null;
-  req.session.destroy((error) => {
-    console.log(error);
-    res.json({ message: "Logged Out" });
-  });
+  res.json({ message: "Logged Out" });
 };
 
 module.exports.register = (req, res, next) => {

@@ -1,1 +1,1 @@
-module.exports.PRIVATE_KEY = "REACT_TEST_KEY";
+module.exports.PRIVATE_KEY = process.env.JWT_PRIVATE_KEY;

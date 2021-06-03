@@ -4,6 +4,9 @@ const router = express.Router();
 const expenseController = require("../controllers/expenseController");
 const { validateExpense } = require("../middlewares/expense-validate");
 const { uploadFile } = require("../middlewares/upload");
+const isAuthenticated = require("../middlewares/is-auth");
+
+router.use(isAuthenticated);
 
 router.get("/get-expense-by-month", expenseController.getExpenseForMonth);
 
